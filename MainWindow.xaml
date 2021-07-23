@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DOCX_Viewer" 
         mc:Ignorable="d"
-        Title="WPF_DocX_Viewer Supported: MS Word files(Docx,Doc)" Height="412" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="412" Width="800" ResizeMode="NoResize">
     <Grid local:DropFilesBehaviorExtension.IsEnabled="True">
         <Button Margin="30,0,0,46" Content="Open" HorizontalAlignment="Left" Width="200" Height="30" VerticalAlignment="Bottom" Cursor="Hand" Command="{Binding AddCommand}"/>
         <Button Margin="30,0,0,11" Content="Delete" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" Cursor="Hand" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedFile}"/>
