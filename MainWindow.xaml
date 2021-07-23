@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPF_DOCX_Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_DOCX_Viewer" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="412" Width="800" ResizeMode="NoResize">
+    <Grid local:DropFilesBehaviorExtension.IsEnabled="True">
+        <Button Margin="30,0,0,46" Content="Open" HorizontalAlignment="Left" Width="200" Height="30" VerticalAlignment="Bottom" Cursor="Hand" Command="{Binding AddCommand}"/>
+        <Button Margin="30,0,0,11" Content="Delete" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" Cursor="Hand" Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedFile}"/>
+        <ListBox Name ="ListBox" HorizontalAlignment="Left" Height="260" Margin="30,30,0,0" VerticalAlignment="Top" Width="200" ItemsSource ="{Binding File_list}" SelectedItem="{Binding SelectedFile}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Binding Path=Name}" Cursor="Hand">
+                            <TextBlock.ToolTip>
+                                <TextBlock Text="{Binding Path=Properties}"/>
+                            </TextBlock.ToolTip>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ScrollViewer Margin="255,30,19,11">
+            <TextBox Name ="TextBox" TextWrapping="Wrap" IsReadOnly="True" Text="{Binding SelectedFile.Text}"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
