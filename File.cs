@@ -118,7 +118,7 @@ namespace WPF_DOCX_Viewer
                 }
                 Text = text.ToString();
 
-                Properties = "Путь: " + Path + "\nАвтор: " + Autor + "\nРазмер: " + Size + "\nДата изменения:" + Change_Time.ToString();
+                Properties = "Path: " + Path + "\nAuthor: " + Autor + "\nSize: " + Size + "\nChange date:" + Change_Time.ToString();
                 logger.Info($"Text and properties extracted from file({Path})");
             }
             catch(ArgumentNullException)
